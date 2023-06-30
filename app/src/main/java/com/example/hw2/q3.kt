@@ -21,7 +21,7 @@ Filtreleme işleminden dönen listeyi yaşları 25’ten büyükler ve küçükl
 
 data class Student(val name: String, val age: Int, val school: String)
 
-fun main(){
+fun main() {
 
     val students = arrayListOf(
         Student("Ahmet", 20, "Üniversite A"),
@@ -34,12 +34,30 @@ fun main(){
         Student("Caner", 26, "Üniversite A")
     )
 
-    println("Oldest student name -> ${students.maxBy{ it.age}.name} , Index: ${students.indexOf(students.maxBy{ it.age})}")
-    println("Youngest student name -> ${students.minBy{ it.age}.name} , Index: ${students.indexOf(students.minBy{ it.age})}")
+    println(
+        "Oldest student name -> ${students.maxBy { it.age }.name} , Index: ${
+            students.indexOf(
+                students.maxBy { it.age })
+        }"
+    )
+    println(
+        "Youngest student name -> ${students.minBy { it.age }.name} , Index: ${
+            students.indexOf(
+                students.minBy { it.age })
+        }"
+    )
 
 
-    println("Students attending University A older than 25: ${students.filter { it.school == "Üniversite A" && it.age > 25 }.map { it.name }}")
-    println("Students attending University A younger than 25: ${students.filter { it.school == "Üniversite A" && it.age < 25 }.map { it.name }}")
-    
+    println(
+        "Students attending University A older than 25: ${
+            students.filter { it.school == "Üniversite A" && it.age > 25 }.map { it.name }
+        }"
+    )
+    println(
+        "Students attending University A younger than 25: ${
+            students.filter { it.school == "Üniversite A" && it.age < 25 }.map { it.name }
+        }"
+    )
+
 
 }
